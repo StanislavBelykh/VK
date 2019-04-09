@@ -9,6 +9,7 @@
 import UIKit
 
 class MyGroupsCell: UITableViewCell {
+  static let reuseId = "MyGroupsCell"
 
   @IBOutlet weak var myGroup: UILabel!
   

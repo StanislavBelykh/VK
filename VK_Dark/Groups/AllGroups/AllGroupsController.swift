@@ -11,8 +11,19 @@ import UIKit
 class AllGroupsController: UITableViewController {
 
   
-  var allGroups = [" Group 1", " Group 2", " Group 3", "Group 4", "Group 5", "Group 6", "Group 7", "Group 8"]
   
+  public let groups:[Group] = [
+    Group(name: "Group 1"),
+    Group(name: "Group 2"),
+    Group(name: "Group 3"),
+    Group(name: "Group 4"),
+    Group(name: "Group 5"),
+    Group(name: "Group 6"),
+    Group(name: "Group 7"),
+    Group(name: "Group 8"),
+    Group(name: "Group 9")
+  ]
+
   override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -22,13 +33,13 @@ class AllGroupsController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return allGroups.count
+        return groups.count
     }
  
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       let cell = tableView.dequeueReusableCell(withIdentifier: "addGroupCellId", for: indexPath) as! AllGroupsCell
-      cell.textLabel?.text = allGroups[indexPath.row]
-      cell.textLabel?.textColor = .white
+      cell.groupName.text = groups[indexPath.row].name
+      cell.groupName.textColor = .white
       return cell
   }
 }
