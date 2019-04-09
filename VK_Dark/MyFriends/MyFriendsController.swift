@@ -10,6 +10,16 @@ import UIKit
 
 class MyFriendsController: UITableViewController {
 
+  
+  
+  private var myFriends:[Friend] = [
+    Friend(name: "Friend 1"),
+    Friend(name: "Friend 2"),
+    Friend(name: "Friend 3"),
+    Friend(name: "Friend 4"),
+    Friend(name: "Friend 5")
+  ]
+  
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,18 +32,18 @@ class MyFriendsController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     
-        return 0
+        return myFriends.count
     }
-
-    /*
+  
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "myFriendsCells", for: indexPath) as! MyFriendsCell
+        cell.myFriendNameLabel.text = myFriends[indexPath.row].name
 
         // Configure the cell...
 
         return cell
     }
-    */
+ 
 
     /*
     // Override to support conditional editing of the table view.
@@ -70,14 +80,19 @@ class MyFriendsController: UITableViewController {
     }
     */
 
-    /*
+  
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+      if segue.identifier == "ShowPhoto",
+        let photoViewController = segue.destination as? PhotoFriendController,
+        let indexPath = tableView.indexPathForSelectedRow {
+        let photoFriend = myFriends[indexPath.row].name
+        photoViewController.photoFriendTitle = photoFriend
+      }
+     
     }
-    */
+  
 
 }

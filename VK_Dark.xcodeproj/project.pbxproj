@@ -13,8 +13,10 @@
 		7969B323216D0E1E009FA9D0 /* MyFriendsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7969B322216D0E1E009FA9D0 /* MyFriendsCell.swift */; };
 		7969B325216D0E4A009FA9D0 /* MyGroupsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7969B324216D0E4A009FA9D0 /* MyGroupsController.swift */; };
 		7969B327216D0E95009FA9D0 /* MyGroupsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7969B326216D0E95009FA9D0 /* MyGroupsCell.swift */; };
-		79FC87EF216E81DE009261E7 /* AllFriendsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FC87EE216E81DE009261E7 /* AllFriendsController.swift */; };
-		79FC87F1216E81F8009261E7 /* AllFriendsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FC87F0216E81F8009261E7 /* AllFriendsCell.swift */; };
+		79D035CD225BEBBD00453054 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D035CC225BEBBD00453054 /* Group.swift */; };
+		79D035D0225BECCC00453054 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D035CF225BECCC00453054 /* Friend.swift */; };
+		79FC87EF216E81DE009261E7 /* PhotoFriendController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FC87EE216E81DE009261E7 /* PhotoFriendController.swift */; };
+		79FC87F1216E81F8009261E7 /* PhotoFriendsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FC87F0216E81F8009261E7 /* PhotoFriendsCell.swift */; };
 		79FFD5DE2153F29A00B85A7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FFD5DD2153F29A00B85A7F /* AppDelegate.swift */; };
 		79FFD5E02153F29A00B85A7F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FFD5DF2153F29A00B85A7F /* ViewController.swift */; };
 		79FFD5E32153F29A00B85A7F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79FFD5E12153F29A00B85A7F /* Main.storyboard */; };
@@ -29,8 +31,10 @@
 		7969B322216D0E1E009FA9D0 /* MyFriendsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFriendsCell.swift; sourceTree = "<group>"; };
 		7969B324216D0E4A009FA9D0 /* MyGroupsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupsController.swift; sourceTree = "<group>"; };
 		7969B326216D0E95009FA9D0 /* MyGroupsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupsCell.swift; sourceTree = "<group>"; };
-		79FC87EE216E81DE009261E7 /* AllFriendsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllFriendsController.swift; sourceTree = "<group>"; };
-		79FC87F0216E81F8009261E7 /* AllFriendsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllFriendsCell.swift; sourceTree = "<group>"; };
+		79D035CC225BEBBD00453054 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		79D035CF225BECCC00453054 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		79FC87EE216E81DE009261E7 /* PhotoFriendController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoFriendController.swift; sourceTree = "<group>"; };
+		79FC87F0216E81F8009261E7 /* PhotoFriendsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoFriendsCell.swift; sourceTree = "<group>"; };
 		79FFD5DA2153F29A00B85A7F /* VK_Dark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VK_Dark.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79FFD5DD2153F29A00B85A7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		79FFD5DF2153F29A00B85A7F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -78,13 +82,31 @@
 			path = MyGroups;
 			sourceTree = "<group>";
 		};
-		79F211AB2164E37D00F04017 /* AllFriends */ = {
+		79D035CB225BEACC00453054 /* Groups */ = {
 			isa = PBXGroup;
 			children = (
-				79FC87EE216E81DE009261E7 /* AllFriendsController.swift */,
-				79FC87F0216E81F8009261E7 /* AllFriendsCell.swift */,
+				7969B318216D0C16009FA9D0 /* AllGroups */,
+				7969B31F216D0D4C009FA9D0 /* MyGroups */,
 			);
-			path = AllFriends;
+			path = Groups;
+			sourceTree = "<group>";
+		};
+		79D035CE225BECAD00453054 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				79D035CC225BEBBD00453054 /* Group.swift */,
+				79D035CF225BECCC00453054 /* Friend.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		79F211AB2164E37D00F04017 /* PhotoFriends */ = {
+			isa = PBXGroup;
+			children = (
+				79FC87EE216E81DE009261E7 /* PhotoFriendController.swift */,
+				79FC87F0216E81F8009261E7 /* PhotoFriendsCell.swift */,
+			);
+			path = PhotoFriends;
 			sourceTree = "<group>";
 		};
 		79FFD5D12153F29A00B85A7F = {
@@ -106,10 +128,10 @@
 		79FFD5DC2153F29A00B85A7F /* VK_Dark */ = {
 			isa = PBXGroup;
 			children = (
-				7969B31F216D0D4C009FA9D0 /* MyGroups */,
+				79D035CB225BEACC00453054 /* Groups */,
 				7969B31D216D0D26009FA9D0 /* MyFriends */,
-				7969B318216D0C16009FA9D0 /* AllGroups */,
-				79F211AB2164E37D00F04017 /* AllFriends */,
+				79F211AB2164E37D00F04017 /* PhotoFriends */,
+				79D035CE225BECAD00453054 /* Models */,
 				79FFD5DD2153F29A00B85A7F /* AppDelegate.swift */,
 				79FFD5DF2153F29A00B85A7F /* ViewController.swift */,
 				79FFD5E12153F29A00B85A7F /* Main.storyboard */,
@@ -194,13 +216,15 @@
 				7969B325216D0E4A009FA9D0 /* MyGroupsController.swift in Sources */,
 				7969B321216D0DF6009FA9D0 /* MyFriendsController.swift in Sources */,
 				79FFD5F221542F8D00B85A7F /* LoginViewController.swift in Sources */,
+				79D035CD225BEBBD00453054 /* Group.swift in Sources */,
 				7969B327216D0E95009FA9D0 /* MyGroupsCell.swift in Sources */,
 				7969B323216D0E1E009FA9D0 /* MyFriendsCell.swift in Sources */,
 				7969B31A216D0CB8009FA9D0 /* AllGroupsController.swift in Sources */,
-				79FC87F1216E81F8009261E7 /* AllFriendsCell.swift in Sources */,
+				79FC87F1216E81F8009261E7 /* PhotoFriendsCell.swift in Sources */,
 				79FFD5E02153F29A00B85A7F /* ViewController.swift in Sources */,
-				79FC87EF216E81DE009261E7 /* AllFriendsController.swift in Sources */,
+				79FC87EF216E81DE009261E7 /* PhotoFriendController.swift in Sources */,
 				79FFD5DE2153F29A00B85A7F /* AppDelegate.swift in Sources */,
+				79D035D0225BECCC00453054 /* Friend.swift in Sources */,
 				7969B31C216D0CEA009FA9D0 /* AllGroupsCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
