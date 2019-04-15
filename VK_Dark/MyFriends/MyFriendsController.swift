@@ -10,14 +10,12 @@ import UIKit
 
 class MyFriendsController: UITableViewController {
 
-  
-  
-  private var myFriends:[Friend] = [
-    Friend(name: "Friend 1"),
-    Friend(name: "Friend 2"),
-    Friend(name: "Friend 3"),
-    Friend(name: "Friend 4"),
-    Friend(name: "Friend 5")
+  public var myFriends:[Friend] = [
+    Friend(name: "Friend 1", Photos: [UIImage(named: "Friend")]),
+    Friend(name: "Friend 2", Photos: [UIImage(named: "Friend"),UIImage(named: "Friend")]),
+    Friend(name: "Friend 3", Photos: [UIImage(named: "Friend"),UIImage(named: "Friend"),UIImage(named: "Friend")]),
+    Friend(name: "Friend 4", Photos: [UIImage(named: "Friend"),UIImage(named: "Friend"),UIImage(named: "Friend"),UIImage(named: "Friend")]),
+    Friend(name: "Friend 5", Photos: [UIImage(named: "Friend"),UIImage(named: "Friend"),UIImage(named: "Friend"),UIImage(named: "Friend"),UIImage(named: "My_Friends")])
   ]
   
     override func viewDidLoad() {
@@ -39,60 +37,19 @@ class MyFriendsController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myFriendsCells", for: indexPath) as! MyFriendsCell
         cell.myFriendNameLabel.text = myFriends[indexPath.row].name
 
-        // Configure the cell...
 
         return cell
     }
- 
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
   
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
       if segue.identifier == "ShowPhoto",
         let photoViewController = segue.destination as? PhotoFriendController,
         let indexPath = tableView.indexPathForSelectedRow {
         let photoFriend = myFriends[indexPath.row].name
         photoViewController.photoFriendTitle = photoFriend
+        let photosFriend = myFriends[indexPath.row].Photos
+        photoViewController.photosToFriend = photosFriend as! [UIImage]
       }
-     
     }
-  
-
 }
+

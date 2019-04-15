@@ -6,8 +6,9 @@
 //  Copyright © 2019 Станислав Белых. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct Friend {
   let name: String
+  let Photos: [UIImage?] 
 }
