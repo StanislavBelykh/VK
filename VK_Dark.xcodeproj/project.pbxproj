@@ -96,6 +96,15 @@
 			path = MyGroups;
 			sourceTree = "<group>";
 		};
+		7996BB232264DB7E0061A7CF /* Lesson_4 */ = {
+			isa = PBXGroup;
+			children = (
+				799B099A226106E300AE684E /* Lesson_4.storyboard */,
+				799B099C2261136800AE684E /* Lesson_4Controller.swift */,
+			);
+			path = Lesson_4;
+			sourceTree = "<group>";
+		};
 		79D035CB225BEACC00453054 /* Groups */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,13 +160,12 @@
 				79F211AB2164E37D00F04017 /* PhotoFriends */,
 				79D035CE225BECAD00453054 /* Models */,
 				79FFD5DD2153F29A00B85A7F /* AppDelegate.swift */,
+				79AA3E7A2261E44900FE932C /* GradientView.swift */,
 				79FFD5DF2153F29A00B85A7F /* ViewController.swift */,
 				79FFD5E12153F29A00B85A7F /* Main.storyboard */,
-				799B099A226106E300AE684E /* Lesson_4.storyboard */,
-				799B099C2261136800AE684E /* Lesson_4Controller.swift */,
-				79AA3E7A2261E44900FE932C /* GradientView.swift */,
 				79FFD5F121542F8D00B85A7F /* LoginViewController.swift */,
 				79FFD5E42153F29E00B85A7F /* Assets.xcassets */,
+				7996BB232264DB7E0061A7CF /* Lesson_4 */,
 				79FFD5E92153F29E00B85A7F /* Info.plist */,
 			);
 			path = VK_Dark;
@@ -196,6 +204,11 @@
 					79FFD5D92153F29A00B85A7F = {
 						CreatedOnToolsVersion = 9.4.1;
 						LastSwiftMigration = 1020;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -389,6 +402,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = VK_Dark/VK_Dark.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8U33MU82AP;
@@ -397,7 +411,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Stanislav;
+				PRODUCT_BUNDLE_IDENTIFIER = StanislavBelykh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -409,6 +423,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = VK_Dark/VK_Dark.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8U33MU82AP;
@@ -417,7 +432,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Stanislav;
+				PRODUCT_BUNDLE_IDENTIFIER = StanislavBelykh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
