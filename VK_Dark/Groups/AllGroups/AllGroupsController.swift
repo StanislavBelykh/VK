@@ -37,7 +37,7 @@ class AllGroupsController: UITableViewController {
     }
  
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      let cell = tableView.dequeueReusableCell(withIdentifier: "addGroupCellId", for: indexPath) as! AllGroupsCell
+      let cell = tableView.dequeueReusableCell(withIdentifier: AllGroupsCell.reuseId, for: indexPath) as! AllGroupsCell
       cell.groupName.text = groups[indexPath.row].name
       cell.groupName.textColor = .white
       return cell

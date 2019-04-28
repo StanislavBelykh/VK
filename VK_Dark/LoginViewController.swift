@@ -15,7 +15,11 @@ class LoginViewController: UIViewController {
   @IBOutlet weak var passwordInput: UITextField!
   @IBAction func interLogin(_ sender: Any) {
   }
+  @IBOutlet weak var lightButton: UIButton!
   
+  //Подсветка кнопки
+  
+
   @objc func keyboardWasShow (notification: Notification) {
     let info = notification.userInfo! as NSDictionary
     let kbSize = (info.value(forKey: UIResponder.keyboardFrameEndUserInfoKey) as! NSValue) .cgRectValue.size
@@ -72,6 +76,10 @@ class LoginViewController: UIViewController {
   override func viewDidLoad() {
         super.viewDidLoad()
 
+   
+
+    
+    
     let hideKeyboardGesture = UITapGestureRecognizer (target: self, action: #selector(hideKeyboard))
     
     scrollView?.addGestureRecognizer (hideKeyboardGesture)
@@ -88,9 +96,8 @@ class LoginViewController: UIViewController {
     
     //Когда пропадает
     NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillBeHidden), name: UIResponder.keyboardWillShowNotification, object: nil)
-    }
   
-  
+  }
   override func viewWillDisappear(_ animated: Bool) {
       super.viewWillDisappear(animated)
     
@@ -103,3 +110,18 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 }
+
+//class LightForButton: UIView {
+//
+//  override func awakeFromNib() {
+//    super.awakeFromNib()
+//
+//
+//    layer.shadowColor = UIColor.white.cgColor
+//    layer.shadowRadius = 10
+//    layer.shadowOpacity = 0.7
+//    layer.shadowOffset = .zero
+//
+//
+//  }
+//}

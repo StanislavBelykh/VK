@@ -8,10 +8,18 @@
 
 import UIKit
 
-class MyFriendsController: UITableViewController {
+class MyFriendsController: UITableViewController{
+    
+    @IBOutlet var searchBar: UISearchBar! {
+        didSet {
+            searchBar.delegate = self
+        }
+    }
+    
+    
 
   public var myFriends:[Friend] = [
-    Friend(name: "Friend 1", Photos: [UIImage(named: "Friend")]),
+    Friend(name: "Дима", Photos: [UIImage(named: "Friend")]),
     Friend(name: "Friend 2", Photos: [UIImage(named: "Friend"),UIImage(named: "Friend")]),
     Friend(name: "Friend 3", Photos: [UIImage(named: "Friend"),UIImage(named: "Friend"),UIImage(named: "Friend")]),
     Friend(name: "Friend 4", Photos: [UIImage(named: "Friend"),UIImage(named: "Friend"),UIImage(named: "Friend"),UIImage(named: "Friend")]),
@@ -26,6 +34,8 @@ class MyFriendsController: UITableViewController {
     Friend(name: "Mriend 1", Photos: [UIImage(named: "Friend")]),
     Friend(name: "Nriend 1", Photos: [UIImage(named: "Friend")])
   ]
+  public var filterMyFriend = [Friend]()
+    
   public var friendsDictionary = [String: [String]]()
   public var friendSectionTitles = [String]()
   public var friends = [String]()
@@ -35,8 +45,10 @@ class MyFriendsController: UITableViewController {
   
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    filterMyFriend = myFriends
       
-      for friend in myFriends {
+      for friend in filterMyFriend {
         let friendKey = String(friend.name.prefix(1))
         if var friendValues = friendsDictionary[friendKey] {
           friendValues.append(friend.name)
@@ -51,6 +63,12 @@ class MyFriendsController: UITableViewController {
       friendSectionTitles = friendSectionTitles.sorted(by:{ $0 < $1})
   
 
+    }
+    private func filterFriend (with text: String) {
+        filterMyFriend = myFriends.filter { friend in
+            return friend.name.lowercased().contains(text.lowercased())
+        }
+        tableView.reloadData()
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -76,13 +94,16 @@ class MyFriendsController: UITableViewController {
       
         return cell
     }
+    //Отображение секций таблицы
   override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+ 
     return friendSectionTitles[section]
   }
+   
   override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
     return friendSectionTitles
   }
-  
+  //Передача заголовка и фотографий
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
       if segue.identifier == "ShowPhoto",
         let photoViewController = segue.destination as? PhotoFriendController,
@@ -94,4 +115,15 @@ class MyFriendsController: UITableViewController {
       }
     }
 }
-
+    //Расширение для search bar 
+extension MyFriendsController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.isEmpty {
+            filterMyFriend = myFriends
+            tableView.reloadData()
+            return
+        }
+        
+        filterFriend(with: searchText)
+    }
+}

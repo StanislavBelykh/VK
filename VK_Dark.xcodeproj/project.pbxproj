@@ -29,6 +29,9 @@
 		79FFD5E32153F29A00B85A7F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79FFD5E12153F29A00B85A7F /* Main.storyboard */; };
 		79FFD5E52153F29E00B85A7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79FFD5E42153F29E00B85A7F /* Assets.xcassets */; };
 		79FFD5F221542F8D00B85A7F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FFD5F121542F8D00B85A7F /* LoginViewController.swift */; };
+		BF9B94B622763A3900BD04FF /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9B94B522763A3900BD04FF /* NewsTableViewController.swift */; };
+		BF9B94B922763A8400BD04FF /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9B94B822763A8400BD04FF /* PostTableViewCell.swift */; };
+		BF9B94BB22763A9600BD04FF /* CommentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9B94BA22763A9500BD04FF /* CommentsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +59,9 @@
 		79FFD5E42153F29E00B85A7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		79FFD5E92153F29E00B85A7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79FFD5F121542F8D00B85A7F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		BF9B94B522763A3900BD04FF /* NewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
+		BF9B94B822763A8400BD04FF /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		BF9B94BA22763A9500BD04FF /* CommentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +164,7 @@
 				79D035CB225BEACC00453054 /* Groups */,
 				7969B31D216D0D26009FA9D0 /* MyFriends */,
 				79F211AB2164E37D00F04017 /* PhotoFriends */,
+				BF9B94B722763A3F00BD04FF /* News */,
 				79D035CE225BECAD00453054 /* Models */,
 				79FFD5DD2153F29A00B85A7F /* AppDelegate.swift */,
 				79AA3E7A2261E44900FE932C /* GradientView.swift */,
@@ -169,6 +176,16 @@
 				79FFD5E92153F29E00B85A7F /* Info.plist */,
 			);
 			path = VK_Dark;
+			sourceTree = "<group>";
+		};
+		BF9B94B722763A3F00BD04FF /* News */ = {
+			isa = PBXGroup;
+			children = (
+				BF9B94B522763A3900BD04FF /* NewsTableViewController.swift */,
+				BF9B94B822763A8400BD04FF /* PostTableViewCell.swift */,
+				BF9B94BA22763A9500BD04FF /* CommentsTableViewCell.swift */,
+			);
+			path = News;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,7 +223,7 @@
 						LastSwiftMigration = 1020;
 						SystemCapabilities = {
 							com.apple.Keychain = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -256,17 +273,20 @@
 				79FFD5F221542F8D00B85A7F /* LoginViewController.swift in Sources */,
 				79D035CD225BEBBD00453054 /* Group.swift in Sources */,
 				7905E2102264A67B003D2F36 /* LikeControl.swift in Sources */,
+				BF9B94B622763A3900BD04FF /* NewsTableViewController.swift in Sources */,
 				7969B327216D0E95009FA9D0 /* MyGroupsCell.swift in Sources */,
 				7969B323216D0E1E009FA9D0 /* MyFriendsCell.swift in Sources */,
 				7969B31A216D0CB8009FA9D0 /* AllGroupsController.swift in Sources */,
 				79FC87F1216E81F8009261E7 /* PhotoFriendsCell.swift in Sources */,
 				79FFD5E02153F29A00B85A7F /* ViewController.swift in Sources */,
+				BF9B94B922763A8400BD04FF /* PostTableViewCell.swift in Sources */,
 				79AEE727226280620081B174 /* Photo.swift in Sources */,
 				79FC87EF216E81DE009261E7 /* PhotoFriendController.swift in Sources */,
 				799B099D2261136800AE684E /* Lesson_4Controller.swift in Sources */,
 				79FFD5DE2153F29A00B85A7F /* AppDelegate.swift in Sources */,
 				79D035D0225BECCC00453054 /* Friend.swift in Sources */,
 				7969B31C216D0CEA009FA9D0 /* AllGroupsCell.swift in Sources */,
+				BF9B94BB22763A9600BD04FF /* CommentsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,7 +422,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = VK_Dark/VK_Dark.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8U33MU82AP;
@@ -423,7 +442,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = VK_Dark/VK_Dark.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8U33MU82AP;

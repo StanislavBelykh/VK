@@ -9,9 +9,10 @@
 import UIKit
 
 class AllGroupsCell: UITableViewCell {
+    static let reuseId = "addGroupCellId"
 
-  @IBOutlet weak var groupName: UILabel!
-  
+    @IBOutlet weak var groupName: UILabel!
+    
   override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
