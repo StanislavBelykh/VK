@@ -64,6 +64,7 @@ class MyFriendsController: UITableViewController{
   
 
     }
+    //Фильтр для search bar
     private func filterFriend (with text: String) {
         filterMyFriend = myFriends.filter { friend in
             return friend.name.lowercased().contains(text.lowercased())
